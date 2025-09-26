@@ -1,7 +1,18 @@
 $navbar-default-bg: black;
 
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#home-container {
+  margin-top: 25px;
+}
 
 #logo {
   float: left;
@@ -17,12 +28,10 @@ $navbar-default-bg: black;
   text-decoration: none;
 }
 
-.center {
-  text-align: center;
-}
-
 .jumbotron {
-  background-image: asset-url('cards.png');
+  background-image: asset-url('image');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 470px;
 }
@@ -35,34 +44,29 @@ $navbar-default-bg: black;
   font-weight: bold;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#page-content{
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
 .btn-xlarge {
   font-size: 1.7em;
   background-color: black;
 }
 
 footer {
-  margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
 }
 
 .article-actions {
