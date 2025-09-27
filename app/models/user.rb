@@ -10,9 +10,5 @@ class User < ApplicationRecord
                         length: {maximum: 105},
                         format: { with: VALID_EMAIL_REGEX }
 
-    private
-
-    def downcase_email
-        
-    end
+    has_secure_password
 end
