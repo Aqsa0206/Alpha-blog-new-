@@ -25,6 +25,18 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_match "Sports", response.body
   end
+
+  test "invalid form submission results in failure" do
+    get "/categories/new"
+    assert_response :success
+    assert_no_difference 'Category.count' do
+      post categories_path, params: { category: { name: " "} }
+      assert_response :redirect
+    end
+    assert_match "errors", response.body
+    assert_select 'div.alert'
+    assert_select 'h4.alert-heading'
+  end
   
   # test "invalid form submission results in failure" do
   #   sign_in_as(@user, "password")
